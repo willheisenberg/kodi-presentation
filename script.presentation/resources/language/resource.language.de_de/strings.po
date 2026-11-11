@@ -1,0 +1,236 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: de_DE\n"
+
+msgctxt "#30010"
+msgid "General"
+msgstr "Allgemein"
+
+msgctxt "#30011"
+msgid "Presentation folder"
+msgstr "Ordner mit den Präsentationen"
+
+msgctxt "#30012"
+msgid "Render resolution"
+msgstr "Renderauflösung"
+
+msgctxt "#30013"
+msgid "960x540 (720p devices)"
+msgstr "960×540 (720p-Geräte)"
+
+msgctxt "#30014"
+msgid "1920x1080 (default)"
+msgstr "1920×1080 (Vorgabe)"
+
+msgctxt "#30015"
+msgid "3840x2160 (4K)"
+msgstr "3840×2160 (4K)"
+
+msgctxt "#30020"
+msgid "Presenter view"
+msgstr "Referentenansicht"
+
+msgctxt "#30021"
+msgid "Port for the phone page"
+msgstr "Port für die Handy-Seite"
+
+msgctxt "#30030"
+msgid "Storage"
+msgstr "Speicher"
+
+msgctxt "#30031"
+msgid "Cache limit in GB"
+msgstr "Cache-Obergrenze in GB"
+
+msgctxt "#30040"
+msgid "Language"
+msgstr "Sprache"
+
+msgctxt "#30041"
+msgid "Automatic (follow Kodi)"
+msgstr "Automatisch (wie Kodi)"
+
+msgctxt "#30042"
+msgid "German"
+msgstr "Deutsch"
+
+msgctxt "#30043"
+msgid "English"
+msgstr "Englisch"
+
+msgctxt "#30100"
+msgid "Presentation"
+msgstr "Präsentation"
+
+msgctxt "#30101"
+msgid "Presenter view"
+msgstr "Referentenansicht"
+
+msgctxt "#30102"
+msgid "Open on your phone:"
+msgstr "Auf dem Handy öffnen:"
+
+msgctxt "#30103"
+msgid "The matching QR code is on the first slide."
+msgstr "Der QR-Code dazu steht auf der ersten Folie."
+
+msgctxt "#30104"
+msgid "The presenter view could not be started."
+msgstr "Die Referentenansicht konnte nicht gestartet werden."
+
+msgctxt "#30105"
+msgid "The presentation runs anyway."
+msgstr "Die Präsentation läuft trotzdem."
+
+msgctxt "#30106"
+msgid "No presentations found in %s."
+msgstr "Keine Präsentationen in %s gefunden."
+
+msgctxt "#30107"
+msgid "Choose a presentation"
+msgstr "Präsentation wählen"
+
+msgctxt "#30108"
+msgid "Preparing slides …"
+msgstr "Folien werden vorbereitet …"
+
+msgctxt "#30109"
+msgid "Could not prepare the deck:"
+msgstr "Konnte das Deck nicht vorbereiten:"
+
+msgctxt "#30110"
+msgid "This deck has no slides."
+msgstr "Dieses Deck enthält keine Folien."
+
+msgctxt "#30111"
+msgid "%s slides unreadable"
+msgstr "%s Folien nicht lesbar"
+
+msgctxt "#30112"
+msgid "%s slides without an image"
+msgstr "%s Folien ohne Bild"
+
+msgctxt "#30113"
+msgid "Reading the deck"
+msgstr "Deck wird gelesen"
+
+msgctxt "#30114"
+msgid "Drawing the slides"
+msgstr "Folien werden gezeichnet"
+
+msgctxt "#30115"
+msgid "Preview images for the phone"
+msgstr "Vorschaubilder für das Handy"
+
+msgctxt "#30116"
+msgid "Done"
+msgstr "Fertig"
+
+msgctxt "#30117"
+msgid "Jump to slide"
+msgstr "Zu Folie springen"
+
+msgctxt "#30118"
+msgid "untitled"
+msgstr "ohne Titel"
+
+msgctxt "#30119"
+msgid "Page %s"
+msgstr "Seite %s"
+
+msgctxt "#30120"
+msgid "deckcraft-cli not found: %s"
+msgstr "deckcraft-cli nicht gefunden: %s"
+
+msgctxt "#30121"
+msgid "deckcraft-cli is not executable: %s"
+msgstr "deckcraft-cli ist nicht ausführbar: %s"
+
+msgctxt "#30122"
+msgid "deckcraft-cli did not answer after %s seconds"
+msgstr "deckcraft-cli hat nach %s Sekunden nicht geantwortet"
+
+msgctxt "#30123"
+msgid "deckcraft-cli could not be started: %s"
+msgstr "deckcraft-cli ließ sich nicht starten: %s"
+
+msgctxt "#30124"
+msgid "deckcraft-cli failed: %s"
+msgstr "deckcraft-cli fehlgeschlagen: %s"
+
+msgctxt "#30125"
+msgid "info returned invalid JSON: %s"
+msgstr "info lieferte kein gültiges JSON: %s"
+
+msgctxt "#30126"
+msgid "render produced no images"
+msgstr "render hat keine Bilder erzeugt"
+
+msgctxt "#30127"
+msgid "pdfrender not found: %s"
+msgstr "pdfrender nicht gefunden: %s"
+
+msgctxt "#30128"
+msgid "Not a readable PDF: %s"
+msgstr "Kein lesbares PDF: %s"
+
+msgctxt "#30200"
+msgid "Presenter view"
+msgstr "Referentenansicht"
+
+msgctxt "#30201"
+msgid "Next"
+msgstr "Weiter"
+
+msgctxt "#30202"
+msgid "Back"
+msgstr "Zurück"
+
+msgctxt "#30203"
+msgid "Blank screen"
+msgstr "Bildschirm schwarz"
+
+msgctxt "#30204"
+msgid "Show slide again"
+msgstr "Folie wieder zeigen"
+
+msgctxt "#30205"
+msgid "Reset timer"
+msgstr "Timer zurücksetzen"
+
+msgctxt "#30206"
+msgid "No notes for this slide."
+msgstr "Keine Notizen zu dieser Folie."
+
+msgctxt "#30207"
+msgid "No connection – retrying …"
+msgstr "Keine Verbindung – neuer Versuch …"
+
+msgctxt "#30208"
+msgid "Command did not arrive."
+msgstr "Befehl kam nicht an."
+
+msgctxt "#30209"
+msgid "Presentation ended."
+msgstr "Präsentation beendet."
+
+msgctxt "#30210"
+msgid "Next"
+msgstr "Nächste"
+
+msgctxt "#30211"
+msgid "End"
+msgstr "Ende"
+
+msgctxt "#30212"
+msgid "no slides"
+msgstr "keine Folien"
+
+msgctxt "#30213"
+msgid "Current slide"
+msgstr "Aktuelle Folie"
+
+msgctxt "#30214"
+msgid "Next slide"
+msgstr "Nächste Folie"

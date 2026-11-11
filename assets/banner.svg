@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3B74C4" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#3B74C4" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .t { font-family: 'Adwaita Sans', 'Inter', 'DejaVu Sans', sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="400" fill="#1C2028"/>
+  <circle cx="950" cy="210" r="400" fill="url(#glow)"/>
+
+  <!-- Wortmarke -->
+  <text class="t" x="80" y="170" font-size="62" font-weight="700" fill="#F4F4F4" letter-spacing="-1">Kodi Presentation</text>
+  <text class="t" x="82" y="216" font-size="25" fill="#96A0AF">Slides on the TV, speaker notes on your phone.</text>
+
+  <!-- Merkmale -->
+  <g class="t" font-size="15" font-weight="500" fill="#8FB3E4" text-anchor="middle">
+    <rect x="80"  y="262" width="72"  height="34" rx="17" fill="none" stroke="#3B74C4" stroke-opacity="0.55"/>
+    <text x="116" y="284">PPTX</text>
+    <rect x="164" y="262" width="62"  height="34" rx="17" fill="none" stroke="#3B74C4" stroke-opacity="0.55"/>
+    <text x="195" y="284">PDF</text>
+    <rect x="238" y="262" width="118" height="34" rx="17" fill="none" stroke="#3B74C4" stroke-opacity="0.55"/>
+    <text x="297" y="284">LibreELEC</text>
+    <rect x="368" y="262" width="90"  height="34" rx="17" fill="none" stroke="#3B74C4" stroke-opacity="0.55"/>
+    <text x="413" y="284">Offline</text>
+  </g>
+
+  <!-- Fernseher -->
+  <rect x="742" y="90" width="368" height="196" fill="#F4F4F4"/>
+  <rect x="730" y="78" width="392" height="220" rx="10" fill="none" stroke="#3B74C4" stroke-width="6"/>
+  <g fill="#96A0AF">
+    <rect x="772" y="124" width="180" height="14" rx="7" fill="#3B74C4"/>
+    <rect x="772" y="158" width="308" height="12" rx="6"/>
+    <rect x="772" y="186" width="280" height="12" rx="6"/>
+    <rect x="772" y="214" width="240" height="12" rx="6"/>
+  </g>
+  <rect x="906" y="298" width="40"  height="22" fill="#3B74C4"/>
+  <rect x="866" y="320" width="120" height="12" rx="6" fill="#3B74C4"/>
+
+  <!-- Handy mit Referentenansicht -->
+  <rect x="1056" y="150" width="132" height="228" rx="16" fill="#22262F" stroke="#3B74C4" stroke-width="3"/>
+  <rect x="1066" y="164" width="112" height="200" rx="8" fill="#15181F"/>
+  <rect x="1074" y="172" width="40" height="6" rx="3" fill="#96A0AF"/>
+  <rect x="1154" y="172" width="24" height="6" rx="3" fill="#6E7788"/>
+  <rect x="1074" y="188" width="66" height="37" rx="3" fill="#F4F4F4"/>
+  <rect x="1146" y="188" width="32" height="18" rx="3" fill="#5A6373"/>
+  <rect x="1074" y="233" width="104" height="70" rx="5" fill="#1D222B" stroke="#2C323D"/>
+  <g fill="#96A0AF">
+    <rect x="1082" y="243" width="86" height="5" rx="2.5"/>
+    <rect x="1082" y="257" width="94" height="5" rx="2.5"/>
+    <rect x="1082" y="271" width="70" height="5" rx="2.5"/>
+    <rect x="1082" y="285" width="88" height="5" rx="2.5"/>
+  </g>
+  <rect x="1074" y="311" width="50" height="22" rx="5" fill="#3B74C4"/>
+  <rect x="1128" y="311" width="50" height="22" rx="5" fill="#3B74C4"/>
+  <rect x="1074" y="339" width="50" height="16" rx="5" fill="#2F3540"/>
+  <rect x="1128" y="339" width="50" height="16" rx="5" fill="#2F3540"/>
+
+  <rect x="0" y="396" width="1280" height="4" fill="#3B74C4"/>
+</svg>

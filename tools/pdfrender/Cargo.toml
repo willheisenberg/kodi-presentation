@@ -1,0 +1,21 @@
+[package]
+name = "pdfrender"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Rendert PDF-Seiten als PNG für das Kodi-Add-on script.presentation"
+publish = false
+
+[[bin]]
+name = "pdfrender"
+path = "src/main.rs"
+
+[dependencies]
+# Reiner Rust-PDF-Rasterizer auf vello_cpu -- dieselbe CPU-Engine, die auch
+# DeckCraft benutzt. Apache-2.0 ODER MIT, also mit diesem Projekt vereinbar.
+hayro = { version = "0.9", features = ["embed-fonts"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true

@@ -1,0 +1,234 @@
+{
+  "30010": [
+    "Allgemein",
+    "General"
+  ],
+  "30011": [
+    "Ordner mit den Präsentationen",
+    "Presentation folder"
+  ],
+  "30012": [
+    "Renderauflösung",
+    "Render resolution"
+  ],
+  "30013": [
+    "960×540 (720p-Geräte)",
+    "960x540 (720p devices)"
+  ],
+  "30014": [
+    "1920×1080 (Vorgabe)",
+    "1920x1080 (default)"
+  ],
+  "30015": [
+    "3840×2160 (4K)",
+    "3840x2160 (4K)"
+  ],
+  "30020": [
+    "Referentenansicht",
+    "Presenter view"
+  ],
+  "30021": [
+    "Port für die Handy-Seite",
+    "Port for the phone page"
+  ],
+  "30030": [
+    "Speicher",
+    "Storage"
+  ],
+  "30031": [
+    "Cache-Obergrenze in GB",
+    "Cache limit in GB"
+  ],
+  "30040": [
+    "Sprache",
+    "Language"
+  ],
+  "30041": [
+    "Automatisch (wie Kodi)",
+    "Automatic (follow Kodi)"
+  ],
+  "30042": [
+    "Deutsch",
+    "German"
+  ],
+  "30043": [
+    "Englisch",
+    "English"
+  ],
+  "30100": [
+    "Präsentation",
+    "Presentation"
+  ],
+  "30101": [
+    "Referentenansicht",
+    "Presenter view"
+  ],
+  "30102": [
+    "Auf dem Handy öffnen:",
+    "Open on your phone:"
+  ],
+  "30103": [
+    "Der QR-Code dazu steht auf der ersten Folie.",
+    "The matching QR code is on the first slide."
+  ],
+  "30104": [
+    "Die Referentenansicht konnte nicht gestartet werden.",
+    "The presenter view could not be started."
+  ],
+  "30105": [
+    "Die Präsentation läuft trotzdem.",
+    "The presentation runs anyway."
+  ],
+  "30106": [
+    "Keine Präsentationen in %s gefunden.",
+    "No presentations found in %s."
+  ],
+  "30107": [
+    "Präsentation wählen",
+    "Choose a presentation"
+  ],
+  "30108": [
+    "Folien werden vorbereitet …",
+    "Preparing slides …"
+  ],
+  "30109": [
+    "Konnte das Deck nicht vorbereiten:",
+    "Could not prepare the deck:"
+  ],
+  "30110": [
+    "Dieses Deck enthält keine Folien.",
+    "This deck has no slides."
+  ],
+  "30111": [
+    "%s Folien nicht lesbar",
+    "%s slides unreadable"
+  ],
+  "30112": [
+    "%s Folien ohne Bild",
+    "%s slides without an image"
+  ],
+  "30113": [
+    "Deck wird gelesen",
+    "Reading the deck"
+  ],
+  "30114": [
+    "Folien werden gezeichnet",
+    "Drawing the slides"
+  ],
+  "30115": [
+    "Vorschaubilder für das Handy",
+    "Preview images for the phone"
+  ],
+  "30116": [
+    "Fertig",
+    "Done"
+  ],
+  "30117": [
+    "Zu Folie springen",
+    "Jump to slide"
+  ],
+  "30118": [
+    "ohne Titel",
+    "untitled"
+  ],
+  "30119": [
+    "Seite %s",
+    "Page %s"
+  ],
+  "30120": [
+    "deckcraft-cli nicht gefunden: %s",
+    "deckcraft-cli not found: %s"
+  ],
+  "30121": [
+    "deckcraft-cli ist nicht ausführbar: %s",
+    "deckcraft-cli is not executable: %s"
+  ],
+  "30122": [
+    "deckcraft-cli hat nach %s Sekunden nicht geantwortet",
+    "deckcraft-cli did not answer after %s seconds"
+  ],
+  "30123": [
+    "deckcraft-cli ließ sich nicht starten: %s",
+    "deckcraft-cli could not be started: %s"
+  ],
+  "30124": [
+    "deckcraft-cli fehlgeschlagen: %s",
+    "deckcraft-cli failed: %s"
+  ],
+  "30125": [
+    "info lieferte kein gültiges JSON: %s",
+    "info returned invalid JSON: %s"
+  ],
+  "30126": [
+    "render hat keine Bilder erzeugt",
+    "render produced no images"
+  ],
+  "30127": [
+    "pdfrender nicht gefunden: %s",
+    "pdfrender not found: %s"
+  ],
+  "30128": [
+    "Kein lesbares PDF: %s",
+    "Not a readable PDF: %s"
+  ],
+  "30200": [
+    "Referentenansicht",
+    "Presenter view"
+  ],
+  "30201": [
+    "Weiter",
+    "Next"
+  ],
+  "30202": [
+    "Zurück",
+    "Back"
+  ],
+  "30203": [
+    "Bildschirm schwarz",
+    "Blank screen"
+  ],
+  "30204": [
+    "Folie wieder zeigen",
+    "Show slide again"
+  ],
+  "30205": [
+    "Timer zurücksetzen",
+    "Reset timer"
+  ],
+  "30206": [
+    "Keine Notizen zu dieser Folie.",
+    "No notes for this slide."
+  ],
+  "30207": [
+    "Keine Verbindung – neuer Versuch …",
+    "No connection – retrying …"
+  ],
+  "30208": [
+    "Befehl kam nicht an.",
+    "Command did not arrive."
+  ],
+  "30209": [
+    "Präsentation beendet.",
+    "Presentation ended."
+  ],
+  "30210": [
+    "Nächste",
+    "Next"
+  ],
+  "30211": [
+    "Ende",
+    "End"
+  ],
+  "30212": [
+    "keine Folien",
+    "no slides"
+  ],
+  "30213": [
+    "Aktuelle Folie",
+    "Current slide"
+  ],
+  "30214": [
+    "Nächste Folie",
+    "Next slide"
+  ]
+}

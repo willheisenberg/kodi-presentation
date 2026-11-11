@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Genau ein veraenderliches Bildelement. Kodi zeichnet in einem Add-on-Fenster
+     keinen Text; ein zweites, ueberlagerndes Bildelement blieb am Geraet
+     unsichtbar, und setImage mit einem transparenten Bild wirkte unzuverlaessig.
+     Startkarte, Schwarzblende und Folie ersetzen einander deshalb im selben
+     Element: der einzige Weg, der sich am Geraet als verlaesslich erwies. -->
+<window>
+  <coordinates><system>1</system><posx>0</posx><posy>0</posy></coordinates>
+  <controls>
+    <control type="image" id="99">
+      <left>0</left><top>0</top><width>1920</width><height>1080</height>
+      <texture>schwarz.png</texture>
+    </control>
+    <control type="image" id="100">
+      <left>0</left><top>0</top><width>1920</width><height>1080</height>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </controls>
+</window>

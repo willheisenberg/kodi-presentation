@@ -1,0 +1,236 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en_GB\n"
+
+msgctxt "#30010"
+msgid "General"
+msgstr "General"
+
+msgctxt "#30011"
+msgid "Presentation folder"
+msgstr "Presentation folder"
+
+msgctxt "#30012"
+msgid "Render resolution"
+msgstr "Render resolution"
+
+msgctxt "#30013"
+msgid "960x540 (720p devices)"
+msgstr "960x540 (720p devices)"
+
+msgctxt "#30014"
+msgid "1920x1080 (default)"
+msgstr "1920x1080 (default)"
+
+msgctxt "#30015"
+msgid "3840x2160 (4K)"
+msgstr "3840x2160 (4K)"
+
+msgctxt "#30020"
+msgid "Presenter view"
+msgstr "Presenter view"
+
+msgctxt "#30021"
+msgid "Port for the phone page"
+msgstr "Port for the phone page"
+
+msgctxt "#30030"
+msgid "Storage"
+msgstr "Storage"
+
+msgctxt "#30031"
+msgid "Cache limit in GB"
+msgstr "Cache limit in GB"
+
+msgctxt "#30040"
+msgid "Language"
+msgstr "Language"
+
+msgctxt "#30041"
+msgid "Automatic (follow Kodi)"
+msgstr "Automatic (follow Kodi)"
+
+msgctxt "#30042"
+msgid "German"
+msgstr "German"
+
+msgctxt "#30043"
+msgid "English"
+msgstr "English"
+
+msgctxt "#30100"
+msgid "Presentation"
+msgstr "Presentation"
+
+msgctxt "#30101"
+msgid "Presenter view"
+msgstr "Presenter view"
+
+msgctxt "#30102"
+msgid "Open on your phone:"
+msgstr "Open on your phone:"
+
+msgctxt "#30103"
+msgid "The matching QR code is on the first slide."
+msgstr "The matching QR code is on the first slide."
+
+msgctxt "#30104"
+msgid "The presenter view could not be started."
+msgstr "The presenter view could not be started."
+
+msgctxt "#30105"
+msgid "The presentation runs anyway."
+msgstr "The presentation runs anyway."
+
+msgctxt "#30106"
+msgid "No presentations found in %s."
+msgstr "No presentations found in %s."
+
+msgctxt "#30107"
+msgid "Choose a presentation"
+msgstr "Choose a presentation"
+
+msgctxt "#30108"
+msgid "Preparing slides …"
+msgstr "Preparing slides …"
+
+msgctxt "#30109"
+msgid "Could not prepare the deck:"
+msgstr "Could not prepare the deck:"
+
+msgctxt "#30110"
+msgid "This deck has no slides."
+msgstr "This deck has no slides."
+
+msgctxt "#30111"
+msgid "%s slides unreadable"
+msgstr "%s slides unreadable"
+
+msgctxt "#30112"
+msgid "%s slides without an image"
+msgstr "%s slides without an image"
+
+msgctxt "#30113"
+msgid "Reading the deck"
+msgstr "Reading the deck"
+
+msgctxt "#30114"
+msgid "Drawing the slides"
+msgstr "Drawing the slides"
+
+msgctxt "#30115"
+msgid "Preview images for the phone"
+msgstr "Preview images for the phone"
+
+msgctxt "#30116"
+msgid "Done"
+msgstr "Done"
+
+msgctxt "#30117"
+msgid "Jump to slide"
+msgstr "Jump to slide"
+
+msgctxt "#30118"
+msgid "untitled"
+msgstr "untitled"
+
+msgctxt "#30119"
+msgid "Page %s"
+msgstr "Page %s"
+
+msgctxt "#30120"
+msgid "deckcraft-cli not found: %s"
+msgstr "deckcraft-cli not found: %s"
+
+msgctxt "#30121"
+msgid "deckcraft-cli is not executable: %s"
+msgstr "deckcraft-cli is not executable: %s"
+
+msgctxt "#30122"
+msgid "deckcraft-cli did not answer after %s seconds"
+msgstr "deckcraft-cli did not answer after %s seconds"
+
+msgctxt "#30123"
+msgid "deckcraft-cli could not be started: %s"
+msgstr "deckcraft-cli could not be started: %s"
+
+msgctxt "#30124"
+msgid "deckcraft-cli failed: %s"
+msgstr "deckcraft-cli failed: %s"
+
+msgctxt "#30125"
+msgid "info returned invalid JSON: %s"
+msgstr "info returned invalid JSON: %s"
+
+msgctxt "#30126"
+msgid "render produced no images"
+msgstr "render produced no images"
+
+msgctxt "#30127"
+msgid "pdfrender not found: %s"
+msgstr "pdfrender not found: %s"
+
+msgctxt "#30128"
+msgid "Not a readable PDF: %s"
+msgstr "Not a readable PDF: %s"
+
+msgctxt "#30200"
+msgid "Presenter view"
+msgstr "Presenter view"
+
+msgctxt "#30201"
+msgid "Next"
+msgstr "Next"
+
+msgctxt "#30202"
+msgid "Back"
+msgstr "Back"
+
+msgctxt "#30203"
+msgid "Blank screen"
+msgstr "Blank screen"
+
+msgctxt "#30204"
+msgid "Show slide again"
+msgstr "Show slide again"
+
+msgctxt "#30205"
+msgid "Reset timer"
+msgstr "Reset timer"
+
+msgctxt "#30206"
+msgid "No notes for this slide."
+msgstr "No notes for this slide."
+
+msgctxt "#30207"
+msgid "No connection – retrying …"
+msgstr "No connection – retrying …"
+
+msgctxt "#30208"
+msgid "Command did not arrive."
+msgstr "Command did not arrive."
+
+msgctxt "#30209"
+msgid "Presentation ended."
+msgstr "Presentation ended."
+
+msgctxt "#30210"
+msgid "Next"
+msgstr "Next"
+
+msgctxt "#30211"
+msgid "End"
+msgstr "End"
+
+msgctxt "#30212"
+msgid "no slides"
+msgstr "no slides"
+
+msgctxt "#30213"
+msgid "Current slide"
+msgstr "Current slide"
+
+msgctxt "#30214"
+msgid "Next slide"
+msgstr "Next slide"

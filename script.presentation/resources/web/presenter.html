@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{T30200}}</title>
+<style>
+  :root { --bg:#111; --fg:#f4f4f4; --matt:#9a9a9a; --rand:#333; --akzent:#3b74c4; }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:12px; background:var(--bg); color:var(--fg);
+         font:16px/1.5 system-ui, -apple-system, sans-serif;
+         -webkit-text-size-adjust:100%; }
+  .kopf { display:flex; justify-content:space-between; align-items:baseline;
+          color:var(--matt); font-size:14px; margin-bottom:8px; }
+  .bilder { display:grid; grid-template-columns:2fr 1fr; gap:8px; margin-bottom:12px; }
+  .bilder img { width:100%; border:1px solid var(--rand); border-radius:4px;
+                background:#000; display:block; }
+  .bilder figcaption { color:var(--matt); font-size:12px; margin-top:2px;
+                       overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  #notizen { background:#1b1b1b; border:1px solid var(--rand); border-radius:6px;
+             padding:14px; font-size:20px; line-height:1.55; min-height:30vh;
+             white-space:pre-wrap; overflow-y:auto; }
+  #notizen.leer { color:var(--matt); font-style:italic; }
+  .knoepfe { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+  button { font-size:22px; padding:22px 10px; border:0; border-radius:8px;
+           background:var(--akzent); color:#fff; touch-action:manipulation; }
+  button:active { filter:brightness(1.3); }
+  .nebenknoepfe { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; }
+  .nebenknoepfe button { font-size:15px; padding:12px; background:#2a2a2a; color:var(--fg); }
+  .nebenknoepfe button[aria-pressed="true"] { background:var(--akzent); }
+  #verbindung { color:#c4763b; font-size:13px; min-height:18px; margin-top:8px; }
+</style>
+</head>
+<body>
+  <div class="kopf">
+    <span id="zaehler">–</span>
+    <span id="deck"></span>
+    <span id="timer">0:00</span>
+  </div>
+
+  <div class="bilder">
+    <figure style="margin:0">
+      <img id="jetzt" alt="{{T30213}}">
+      <figcaption id="titel"></figcaption>
+    </figure>
+    <figure style="margin:0">
+      <img id="naechste" alt="{{T30214}}">
+      <figcaption id="naechsterTitel">{{T30210}}</figcaption>
+    </figure>
+  </div>
+
+  <div id="notizen"></div>
+
+  <div class="knoepfe">
+    <button id="zurueck" type="button">◀ {{T30202}}</button>
+    <button id="vor" type="button">{{T30201}} ▶</button>
+  </div>
+  <div class="nebenknoepfe">
+    <button id="blende" type="button" aria-pressed="false">{{T30203}}</button>
+    <button id="timerReset" type="button">{{T30205}}</button>
+  </div>
+  <div id="verbindung"></div>
+
+<script>
+(function () {
+  "use strict";
+  var version = 0, laeuft = true;
+  var el = function (id) { return document.getElementById(id); };
+
+  function zeitText(sekunden) {
+    var m = Math.floor(sekunden / 60), s = Math.floor(sekunden % 60);
+    return m + ":" + (s < 10 ? "0" : "") + s;
+  }
+
+  function zeichne(z) {
+    version = z.version;
+    el("zaehler").textContent = z.anzahl ? (z.index + 1) + " / " + z.anzahl : "{{T30212}}";
+    el("deck").textContent = z.deckTitel || "";
+    el("timer").textContent = zeitText(z.sekunden);
+    el("titel").textContent = z.titel || "";
+    el("naechsterTitel").textContent = z.naechsterTitel || "{{T30211}}";
+    var n = el("notizen");
+    if (z.notizen) { n.textContent = z.notizen; n.classList.remove("leer"); }
+    else { n.textContent = "{{T30206}}"; n.classList.add("leer"); }
+    el("jetzt").src = "thumb/" + z.index + ".jpg?v=" + z.version;
+    if (z.index + 1 < z.anzahl) {
+      el("naechste").src = "thumb/" + (z.index + 1) + ".jpg?v=" + z.version;
+      el("naechste").style.visibility = "visible";
+    } else {
+      el("naechste").style.visibility = "hidden";
+    }
+    el("blende").setAttribute("aria-pressed", z.blende ? "true" : "false");
+    el("blende").textContent = z.blende ? "{{T30204}}" : "{{T30203}}";
+  }
+
+  function lausche() {
+    if (!laeuft) { return; }
+    fetch("state?seit=" + version)
+      .then(function (a) { return a.ok ? a.json() : Promise.reject(a.status); })
+      .then(function (z) {
+        el("verbindung").textContent = "";
+        zeichne(z);
+        if (z.beendet) {
+          laeuft = false;
+          el("verbindung").textContent = "{{T30209}}";
+          return;
+        }
+        lausche();
+      })
+      .catch(function () {
+        el("verbindung").textContent = "{{T30207}}";
+        setTimeout(lausche, 1500);
+      });
+  }
+
+  function schicke(aktion, ziel) {
+    fetch("cmd", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ aktion: aktion, ziel: ziel })
+    }).catch(function () {
+      el("verbindung").textContent = "{{T30208}}";
+    });
+  }
+
+  el("vor").addEventListener("click", function () { schicke("vor"); });
+  el("zurueck").addEventListener("click", function () { schicke("zurueck"); });
+  el("blende").addEventListener("click", function () { schicke("blende"); });
+  el("timerReset").addEventListener("click", function () { schicke("timer"); });
+
+  // Der Timer läuft lokal weiter, damit er zwischen zwei Antworten nicht einfriert.
+  setInterval(function () {
+    var t = el("timer").textContent.split(":");
+    if (t.length === 2) {
+      var s = parseInt(t[0], 10) * 60 + parseInt(t[1], 10) + 1;
+      el("timer").textContent = zeitText(s);
+    }
+  }, 1000);
+
+  lausche();
+})();
+</script>
+</body>
+</html>
