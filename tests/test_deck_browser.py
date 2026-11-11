@@ -97,3 +97,14 @@ def test_versteckte_dateien_und_apple_reste_werden_uebergangen(tmp_path, monkeyp
                        ".DS_Store", "echt.pptx"])
     gefunden = {d["name"] for d in deck_browser.finde_decks(str(tmp_path))}
     assert gefunden == {"slides.pdf", "echt.pptx"}
+
+
+def test_findet_auch_die_pptx_geschwister(tmp_path, monkeypatch):
+    """Eine .ppsx kam per Mail und lag im Ordner -- und war unsichtbar.
+
+    Dabei haette der Renderer sie anstandslos angezeigt; nur diese Liste
+    stand davor.
+    """
+    _vfs(monkeypatch, ["vortrag.ppsx", "makros.pptm", "vorlage.potx", "fremd.odp"])
+    gefunden = {d["name"] for d in deck_browser.finde_decks(str(tmp_path))}
+    assert gefunden == {"vortrag.ppsx", "makros.pptm", "vorlage.potx"}

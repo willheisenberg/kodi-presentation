@@ -130,7 +130,13 @@ class DeckcraftRenderer:
 
 # Welcher Renderer für welche Endung. PDF kommt ohne Referentennotizen;
 # alles Weitere steht in pdf_renderer.
-ENDUNGEN_DECKCRAFT = (".pptx", ".deckcraft")
+#
+# .pptm, .ppsx und .potx sind keine eigenen Formate, sondern dasselbe
+# OOXML-Paket wie .pptx -- die Endung sagt nur, was PowerPoint beim Öffnen tun
+# soll: Makros erlauben, gleich ins Vollbild, als Vorlage behandeln. DeckCraft
+# liest alle vier, es schaut in die Datei statt auf den Namen (am Gerät
+# geprüft). .ppsx ist dabei die Variante, die per Mail herumgereicht wird.
+ENDUNGEN_DECKCRAFT = (".pptx", ".pptm", ".ppsx", ".potx", ".deckcraft")
 ENDUNGEN_PDF = (".pdf",)
 
 

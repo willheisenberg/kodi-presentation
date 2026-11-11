@@ -95,6 +95,18 @@ def test_grossschreibung_egal():
     assert isinstance(r, pdf_renderer.PdfRenderer)
 
 
+def test_pptx_geschwister_bekommen_deckcraft():
+    """.ppsx, .pptm und .potx sind dasselbe OOXML-Paket wie .pptx.
+
+    Am Geraet geprueft: deckcraft-cli liest alle drei, es schaut in die Datei
+    statt auf den Namen. Die Endung sagt nur, was PowerPoint beim Oeffnen tun
+    soll -- Vollbild, Makros erlaubt, Vorlage.
+    """
+    for endung in (".ppsx", ".pptm", ".potx"):
+        r = renderer.fuer_deck(f"/decks/a{endung}", "/bin/deckcraft-cli", "/bin/pdfrender")
+        assert isinstance(r, renderer.DeckcraftRenderer), endung
+
+
 def test_unbekannte_endung_meldet_fehler():
     with pytest.raises(renderer.RendererFehler):
         renderer.fuer_deck("/decks/a.odp", "/bin/deckcraft-cli", "/bin/pdfrender")

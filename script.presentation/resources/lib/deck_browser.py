@@ -5,7 +5,8 @@ Nutzt xbmcvfs statt os.listdir, damit Kodi-Quellen wie smb:// funktionieren.
 import xbmcvfs
 
 # PDF kommt ohne Referentennotizen; siehe pdf_renderer.
-ENDUNGEN = (".pptx", ".deckcraft", ".pdf")
+# .pptm/.ppsx/.potx sind dasselbe Format wie .pptx; siehe renderer.ENDUNGEN_DECKCRAFT.
+ENDUNGEN = (".pptx", ".pptm", ".ppsx", ".potx", ".deckcraft", ".pdf")
 
 
 def _als_ordner(pfad):

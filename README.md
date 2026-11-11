@@ -98,9 +98,15 @@ language is therefore impossible, not merely unlikely.
 
 | Format | Slides | Speaker notes | Renderer |
 |---|---|---|---|
-| `.pptx` | yes | yes | DeckCraft |
+| `.pptx` `.pptm` `.ppsx` `.potx` | yes | yes | DeckCraft |
 | `.deckcraft` | yes | yes | DeckCraft |
 | `.pdf` | yes | **no** | pdfrender |
+
+Those four PowerPoint extensions are not four formats. They are the same OOXML
+package; the extension only tells PowerPoint what to do on opening — allow
+macros, go straight to fullscreen, treat as a template. DeckCraft reads all of
+them, because it looks inside the file rather than at the name. `.ppsx` in
+particular is the variant people forward by mail.
 
 **PDFs carry no speaker notes.** They play back fine on the TV, but on the phone
 the notes panel stays empty and you get only the page counter, the preview and
@@ -138,7 +144,7 @@ until the device runs out of memory.
 ## Development
 
 ```bash
-python -m pytest              # 178 tests, no binary needed
+python -m pytest              # 181 tests, no binary needed
 python -m pytest -m binary    # additionally against the real deckcraft-cli
 cargo test --manifest-path tools/pdfrender/Cargo.toml
 ```
