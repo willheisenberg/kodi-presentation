@@ -238,3 +238,36 @@ def test_fehlende_bilder_werden_im_manifest_vermerkt(tmp_path):
     c = deck_cache.DeckCache(str(tmp_path / "cache"), 10**9)
     m = c.hole(deck(tmp_path), ZuWenigBilder(folien=5), 2)
     assert m["fehlendeBilder"] == 3, f"nicht vermerkt: {m.get('fehlendeBilder')}"
+
+
+def test_abbruch_laesst_keine_bytes_auf_der_platte(tmp_path):
+    """Ein abgebrochener Lauf muss auch seine schon geschriebenen Bilder entfernen.
+
+    Darauf ruht das Argument, dass pdfrender keine Seitenobergrenze braucht:
+    Die Zeitgrenze von 300 s deckelt, wie viel ein Riesen-PDF überhaupt
+    schreiben kann, und dieses Aufräumen gibt es danach wieder frei. Bliebe
+    der Rumpf liegen, liefe /storage mit jedem Fehlversuch weiter voll.
+    """
+
+    class SchreibtDannFehler:
+        def info(self, pfad):
+            return renderer.DeckInfo(
+                titel="Deck",
+                folien=[renderer.Folie(0, "Folie 0", "")],
+                folien_groesse=(960.0, 540.0),
+            )
+
+        def render(self, pfad, ziel, skalierung):
+            os.makedirs(ziel, exist_ok=True)
+            for i in range(20):
+                with open(os.path.join(ziel, f"slide-{i + 1:02d}.png"), "wb") as f:
+                    f.write(b"x" * 10_000)
+            raise renderer.RendererFehler("Zeitgrenze von 300 s überschritten")
+
+    wurzel = tmp_path / "cache"
+    c = deck_cache.DeckCache(str(wurzel), 10**9)
+    p = deck(tmp_path)
+    with pytest.raises(renderer.RendererFehler):
+        c.hole(p, SchreibtDannFehler(), 2)
+    assert c.groesse_bytes() == 0, "Rumpf des abgebrochenen Laufs blieb liegen"
+    assert list(wurzel.iterdir()) == []
