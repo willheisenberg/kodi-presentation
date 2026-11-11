@@ -66,6 +66,37 @@ fn info(args: &[String]) -> Result<(), String> {
     Ok(())
 }
 
+/// Obergrenze für ein einzelnes gerendertes Bild.
+///
+/// Ein PDF darf Seiten beliebiger Größe deklarieren, und weder `--scale` noch
+/// `--width` begrenzen die Pixelzahl: `--width 1920` macht aus einer Seite von
+/// 1000 × 1 000 000 Punkten ein Bild mit 3,7 Milliarden Pixeln, also knapp
+/// fünfzehn Gigabyte. Die hat der Pi nicht, und der OOM-Killer trifft dann
+/// nicht nur pdfrender, sondern Kodi gleich mit. 40 Megapixel sind fast das
+/// Fünffache von 4K -- für eine Folie reichlich, für einen Unfall zu wenig.
+const MAX_PIXEL: f64 = 40_000_000.0;
+
+fn pruefe_budget(
+    nummer: usize,
+    breite_pt: f32,
+    hoehe_pt: f32,
+    skalierung: f32,
+) -> Result<(), String> {
+    let breite = (breite_pt as f64 * skalierung as f64).ceil();
+    let hoehe = (hoehe_pt as f64 * skalierung as f64).ceil();
+    if !breite.is_finite() || !hoehe.is_finite() {
+        return Err(format!("Seite {nummer}: Seitengröße ist keine Zahl"));
+    }
+    if breite * hoehe > MAX_PIXEL {
+        return Err(format!(
+            "Seite {nummer} ergäbe {breite:.0}×{hoehe:.0} Pixel; mehr als {:.0} Megapixel \
+             rendert pdfrender nicht",
+            MAX_PIXEL / 1_000_000.0
+        ));
+    }
+    Ok(())
+}
+
 fn rendere(args: &[String]) -> Result<(), String> {
     let mut pfad: Option<&str> = None;
     let mut ziel: Option<&str> = None;
@@ -130,6 +161,8 @@ fn rendere(args: &[String]) -> Result<(), String> {
     let cache = RenderCache::new();
 
     for (nummer, seite) in pdf.pages().iter().enumerate() {
+        let (seitenbreite, seitenhoehe) = seite.render_dimensions();
+        pruefe_budget(nummer + 1, seitenbreite, seitenhoehe, skalierung)?;
         let pixmap = render(seite, &cache, &interpreter, &qualitaet, &pixmap_einstellungen);
         let name = format!("{ziel}/slide-{:02}.png", nummer + 1);
         let png = pixmap
@@ -139,4 +172,32 @@ fn rendere(args: &[String]) -> Result<(), String> {
         println!("{name}");
     }
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn normale_folie_passt_ins_budget() {
+        assert!(pruefe_budget(1, 960.0, 540.0, 2.0).is_ok());
+    }
+
+    #[test]
+    fn vierk_folie_passt_ins_budget() {
+        assert!(pruefe_budget(1, 960.0, 540.0, 4.0).is_ok());
+    }
+
+    #[test]
+    fn extrem_hohe_seite_wird_abgelehnt() {
+        // --width 1920 auf einer 1000 pt breiten Seite ergibt Maßstab 1.92;
+        // bei einer Million Punkten Höhe sind das 3,7 Milliarden Pixel.
+        let fehler = pruefe_budget(3, 1000.0, 1_000_000.0, 1.92).unwrap_err();
+        assert!(fehler.contains("Seite 3"), "unerwartet: {fehler}");
+    }
+
+    #[test]
+    fn riesige_quadratische_seite_wird_abgelehnt() {
+        assert!(pruefe_budget(1, 14400.0, 14400.0, 10.0).is_err());
+    }
 }

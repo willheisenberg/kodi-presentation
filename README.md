@@ -114,7 +114,10 @@ files, export them to PPTX or PDF on a desktop machine first.
 
 PDFs are rendered to a fixed target width rather than by a scale factor: a deck
 with a page width of 1440 points would otherwise come out at 2880 pixels, four
-times what a 1080p TV can show.
+times what a 1080p TV can show. A single page is capped at 40 megapixels — about
+five times 4K. A PDF that declares pages far larger than that (a plotter drawing,
+a poster) is refused with an error naming the page, rather than being rendered
+until the device runs out of memory.
 
 ## Limitations
 
@@ -137,6 +140,7 @@ times what a 1080p TV can show.
 ```bash
 python -m pytest              # 178 tests, no binary needed
 python -m pytest -m binary    # additionally against the real deckcraft-cli
+cargo test --manifest-path tools/pdfrender/Cargo.toml
 ```
 
 The Kodi modules are stubbed in `tests/conftest.py`, so the suite runs on any
